@@ -14,5 +14,14 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image x:Name="imgLogin" HorizontalAlignment="Left" Height="310" VerticalAlignment="Top" Width="255" Stretch="Fill" Source="Images/Raccoon_Login.png"/>
+        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="23" Margin="444,33,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtForename" HorizontalAlignment="Left" Height="23" Margin="444,83,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="23" Margin="444,133,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="444,183,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center"/>
+        <Label x:Name="lblID" Content="ID:" HorizontalAlignment="Left" Margin="399,33,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16"/>
+        <Label x:Name="lblForename" Content="Forename:" HorizontalAlignment="Left" Margin="342,83,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16"/>
+        <Label x:Name="lblSurname" Content="Surname:" HorizontalAlignment="Left" Margin="351,133,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16"/>
+        <Label x:Name="lblAge" Content="Age:" HorizontalAlignment="Left" Margin="389,183,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="440,255,0,0" VerticalAlignment="Top" Width="75" FontFamily="Lucida Console" FontSize="16" Click="btnSave_Click"/>
     </Grid>
 </Window>
