@@ -22,6 +22,6 @@
         <Label x:Name="lblForename" Content="Forename:" HorizontalAlignment="Left" Margin="342,83,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16"/>
         <Label x:Name="lblSurname" Content="Surname:" HorizontalAlignment="Left" Margin="351,133,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16"/>
         <Label x:Name="lblAge" Content="Age:" HorizontalAlignment="Left" Margin="389,183,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16"/>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="440,255,0,0" VerticalAlignment="Top" Width="75" FontFamily="Lucida Console" FontSize="16" Click="btnSave_Click"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="440,255,0,0" VerticalAlignment="Top" Width="75" FontFamily="Lucida Console" FontSize="16" Click="btnSave_Click" MouseEnter="btnSave_MouseEnter" MouseLeave="btnSave_MouseLeave"/>
     </Grid>
 </Window>

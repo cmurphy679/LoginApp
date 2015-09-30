@@ -68,12 +68,12 @@ namespace Login
         // Login Button (MouseEnter)
         private void btnLogin_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login2.png", UriKind.RelativeOrAbsolute)); ;
+            imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login2.png", UriKind.RelativeOrAbsolute));
         }
         // Login Button (MouseExit)
         private void btnLogin_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login.png", UriKind.RelativeOrAbsolute)); ;
+            imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login.png", UriKind.RelativeOrAbsolute));
         }
     }
 }
