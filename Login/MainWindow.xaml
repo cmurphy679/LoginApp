@@ -6,6 +6,10 @@
         mc:Ignorable="d"
         Title="Main" Height="350" Width="600" ResizeMode="CanMinimize" Icon="Images/icon.ico" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="175*"/>
+            <ColumnDefinition Width="122*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="DarkBlue" Offset="-0.5"/>
@@ -13,15 +17,20 @@
                 <GradientStop Color="WhiteSmoke" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image x:Name="imgLogin" HorizontalAlignment="Left" Height="310" VerticalAlignment="Top" Width="255" Stretch="Fill" Source="Images/Raccoon_Login.png"/>
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="444,33,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center" Focusable="False"/>
-        <TextBox x:Name="txtForename" HorizontalAlignment="Left" Height="23" Margin="444,83,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="23" Margin="444,133,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="444,183,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center"/>
-        <Label x:Name="lblID" Content="Username:" HorizontalAlignment="Left" Margin="342,33,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16"/>
-        <Label x:Name="lblForename" Content="Forename:" HorizontalAlignment="Left" Margin="342,83,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16"/>
-        <Label x:Name="lblSurname" Content="Surname:" HorizontalAlignment="Left" Margin="351,133,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16"/>
-        <Label x:Name="lblAge" Content="Age:" HorizontalAlignment="Left" Margin="389,183,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16"/>
-        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="440,255,0,0" VerticalAlignment="Top" Width="75" FontFamily="Lucida Console" FontSize="16" Click="btnUpdate_Click" MouseEnter="btnUpdate_MouseEnter" MouseLeave="btnUpdate_MouseLeave"/>
+        <Border BorderBrush="Black" BorderThickness="2" Grid.ColumnSpan="2" Grid.Column="0" HorizontalAlignment="Left" Height="292" Margin="337,10,0,0" VerticalAlignment="Top" Width="241"/>
+        <Image Grid.Column="0" x:Name="imgLogin" Height="310" VerticalAlignment="Top" Stretch="Fill" Source="Images/Raccoon_Login.png" Margin="0,0,95,0"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="96,72,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center" Focusable="False" Grid.Column="1" ToolTip=""/>
+        <TextBox x:Name="txtForename" HorizontalAlignment="Left" Height="23" Margin="96,122,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center" Grid.Column="1" ToolTip="Enter forename.."/>
+        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="23" Margin="96,172,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center" Grid.Column="1" ToolTip="Enter surname.."/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="23" Margin="96,222,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center" Grid.Column="1" ToolTip="Enter age.."/>
+        <Label x:Name="lblID" Content="Username:" HorizontalAlignment="Left" Margin="344,72,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.ColumnSpan="2"
+               Grid.Column="0" />
+        <Label x:Name="lblForename" Content="Forename:" HorizontalAlignment="Left" Margin="344,122,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.ColumnSpan="2"
+               Grid.Column="0" />
+        <Label x:Name="lblSurname" Content="Surname:" HorizontalAlignment="Left" Margin="3,172,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.Column="1" ToolTip=""/>
+        <Label x:Name="lblAge" Content="Age:" HorizontalAlignment="Left" Margin="41,222,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.Column="1" ToolTip=""/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="41,268,0,0" VerticalAlignment="Top" Width="145" FontFamily="Lucida Console" FontSize="16" Click="btnUpdate_Click" MouseEnter="btnUpdate_MouseEnter" MouseLeave="btnUpdate_MouseLeave" Grid.Column="1" ToolTip="Update user details.."/>
+        <Label x:Name="lblWelcome" Content="Edit Profile" HorizontalAlignment="Left" Margin="3,21,0,0" VerticalAlignment="Top" FontFamily="Copperplate Gothic Bold" FontSize="16" Background="#FFC3D4E2" Grid.Column="1" Width="212" HorizontalContentAlignment="Center"/>
+        <Button Grid.Column="0" x:Name="btnSettings" Content="Advanced Settings" HorizontalAlignment="Left" Margin="119,21,0,0" VerticalAlignment="Top" Width="183" FontFamily="Lucida Console" FontSize="16" Height="28" ToolTip="Change password or delete account.." MouseEnter="btnSettings_MouseEnter" MouseLeave="btnSettings_MouseLeave" Click="btnSettings_Click"/>
     </Grid>
 </Window>

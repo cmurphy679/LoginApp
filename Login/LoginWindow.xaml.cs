@@ -33,8 +33,8 @@ namespace Login
             {
                 sqliteCon.Open();
                 // Lookup username + password from textboxes in the DB
-                var query = "select * from userinfo where username='" + txtUsername.Text +
-                               "' and password='" + txtPassword.Password + "'";
+                var query = "SELECT * FROM userinfo WHERE username = '" + txtUsername.Text +
+                               "' AND password = '" + txtPassword.Password + "'";
                 // Create a command with the SQL query and pass to the DB connection
                 var createCommand = new SQLiteCommand(query, sqliteCon);
                 // Execute the query
