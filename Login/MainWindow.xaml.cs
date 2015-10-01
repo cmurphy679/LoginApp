@@ -10,26 +10,37 @@ namespace Login
         // Initialise DB source location(Debug) and version
         private const string DbConnectionString = @"Data Source=database.db;Version=3;";
 
-        public MainWindow()
+        public MainWindow(string username)
         {
             InitializeComponent();
+            txtUsername.Text = username; // Set username field
         }
 
-        // Save Button (MouseClick) - Update database
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        // Update Button (MouseClick) - Update database
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
             // Create and open connection to DB
             var sqliteCon = new SQLiteConnection(DbConnectionString);
             try
             {
-                sqliteCon.Open();
-                // Update database with new personal information from textboxes
-                var query = "insert or replace into userinfo (id, forename, surname, age) values('" + txtID.Text + "','" + txtForename.Text + "','" + txtSurname.Text + "','" + txtAge.Text + "')";
-                // Create a command with the SQL query and pass to the DB connection
-                var createCommand = new SQLiteCommand(query, sqliteCon);
-                // Execute the query
-                createCommand.ExecuteNonQuery();
-                MessageBox.Show("Saved!");
+                sqliteCon.Open(); // Open SQLite connection
+                // Array holding the value for each textbox
+                string[,] inputArray = { {txtForename.Text, "forename"},
+                                         {txtSurname.Text, "surname"},
+                                         {txtAge.Text, "age"}};
+                for (var i = 0; i < inputArray.Length/2; i++)
+                {
+                    if (inputArray[i,0].Length > 0) // if textbox is not empty
+                    {
+                        // Update database with new personal information from textbox
+                        var query = "update userinfo set " + inputArray[i,1] + " = " + inputArray[i,0] + " where username = " + txtUsername.Text + "";
+                        // Create a command with the SQL query and pass to the DB connection
+                        var createCommand = new SQLiteCommand(query, sqliteCon);
+                        // Execute the query
+                        createCommand.ExecuteNonQuery();
+                    }
+                }
+                MessageBox.Show("Updated!");
                 sqliteCon.Close();
             }
             catch (Exception ex)
@@ -38,13 +49,13 @@ namespace Login
             }
         }
 
-        // Save Button (MouseEnter)
-        private void btnSave_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        // Update Button (MouseEnter)
+        private void btnUpdate_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login2.png", UriKind.RelativeOrAbsolute));
         }
-        // Save Button (MouseExit)
-        private void btnSave_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        // Update Button (MouseExit)
+        private void btnUpdate_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login.png", UriKind.RelativeOrAbsolute));
         }

@@ -15,6 +15,8 @@ namespace Login
             InitializeComponent();
         }
 
+        public string GetUsername => txtUsername.Text; // Get username
+
         // Login Button (MouseClick)
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
@@ -50,9 +52,10 @@ namespace Login
                 switch (count)
                 {
                     case 1:
-                        var main = new MainWindow();
-                        sqliteCon.Close();
-                        main.ShowDialog();
+                        sqliteCon.Close(); // close SQLite connection
+                        var main = new MainWindow(GetUsername); // Create new window
+                        main.Show(); // Show the new window
+                        Close(); // Close the current window
                         break;
                     default:
                         MessageBox.Show("Username and password is incorrect! Try again!");
@@ -75,5 +78,6 @@ namespace Login
         {
             imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login.png", UriKind.RelativeOrAbsolute));
         }
+
     }
 }
