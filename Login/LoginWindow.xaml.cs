@@ -96,10 +96,5 @@ namespace Login
         {
             imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login.png", UriKind.RelativeOrAbsolute));
         }
-
-        private void btnRegister_MouseLeave(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-
-        }
     }
 }
