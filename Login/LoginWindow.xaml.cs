@@ -27,10 +27,10 @@ namespace Login
                 return;
             }
 
-            // Create and open connection to DB
-            var sqliteCon = new SQLiteConnection(DbConnectionString);
             try
             {
+                // Create and open connection to DB
+                var sqliteCon = new SQLiteConnection(DbConnectionString);
                 sqliteCon.Open();
                 // Lookup username + password from textboxes in the DB
                 var query = "SELECT * FROM userinfo WHERE username = '" + txtUsername.Text +
@@ -53,8 +53,8 @@ namespace Login
                 {
                     case 1:
                         sqliteCon.Close(); // Close SQLite connection
-                        var main = new MainWindow(GetUsername); // Create new window
-                        main.Show(); // Show the new window
+                        var profile = new ProfileWindow(GetUsername); // Create new window
+                        profile.Show(); // Show the new window
                         Close(); // Close the current window
                         break;
                     default:
@@ -68,6 +68,14 @@ namespace Login
             }
         }
 
+        // Register Button (Click)
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            var register = new RegisterWindow(); // Create new window
+            register.Show(); // Show the new window
+            Close(); // Close the current window
+        }
+
         // Login Button (MouseEnter)
         private void btnLogin_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -78,6 +86,20 @@ namespace Login
         {
             imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login.png", UriKind.RelativeOrAbsolute));
         }
+        // Register Button (MouseExit)
+        private void btnRegister_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login2.png", UriKind.RelativeOrAbsolute));
+        }
+        // Register Button (MouseExit)
+        private void btnRegister_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login.png", UriKind.RelativeOrAbsolute));
+        }
 
+        private void btnRegister_MouseLeave(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
+        }
     }
 }

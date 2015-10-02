@@ -5,12 +5,12 @@ using System.Windows.Media.Imaging;
 
 namespace Login
 {
-    public partial class MainWindow
+    public partial class ProfileWindow
     {
         // Initialise DB source location(Debug) and version
         private const string DbConnectionString = @"Data Source=database.db;Version=3;";
 
-        public MainWindow(string username)
+        public ProfileWindow(string username)
         {
             InitializeComponent();
             txtUsername.Text = username; // Set username field
@@ -20,13 +20,13 @@ namespace Login
         // Update Button (MouseClick) - Update database
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            // Create and open connection to DB
-            var sqliteCon = new SQLiteConnection(DbConnectionString);
             try
             {
                 // Only update details if a textbox has been updated
                 if (txtForename.Text.Length > 0 || txtSurname.Text.Length > 0 || txtAge.Text.Length > 0)
                 {
+                    // Create and open connection to DB
+                    var sqliteCon = new SQLiteConnection(DbConnectionString);
                     sqliteCon.Open(); // Open SQLite connection
                     // Array holding the value for each textbox
                     string[,] inputArray =
@@ -62,6 +62,7 @@ namespace Login
             }
         }
 
+        // Settings button (Click)
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
             var settings = new SettingsWindow(GetUsername); // Create new window

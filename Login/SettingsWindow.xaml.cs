@@ -18,6 +18,7 @@ namespace Login
 
         public string GetUsername => txtUsername.Text; // Get username
 
+        // Change password button (Click)
         private void btnChangePassword_Click(object sender, RoutedEventArgs e)
         {
             // If the password boxes are empty, print error
@@ -27,10 +28,10 @@ namespace Login
                 return;
             }
 
-            // Create and open connection to DB
-            var sqliteCon = new SQLiteConnection(DbConnectionString);
             try
             {
+                // Create and open connection to DB
+                var sqliteCon = new SQLiteConnection(DbConnectionString);
                 sqliteCon.Open();
                 // Retrieve current password from the database
                 var query = "SELECT password FROM userinfo WHERE username = '" + txtUsername.Text +"'";
@@ -72,6 +73,7 @@ namespace Login
             }
         }
 
+        // Delete account button (Click)
         private void btnDeleteAccount_Click(object sender, RoutedEventArgs e)
         {
             // If the password box is empty, print error
@@ -109,10 +111,11 @@ namespace Login
             }
         }
 
+        // Back button (Click)
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            var main = new MainWindow(GetUsername); // Create new window
-            main.Show(); // Show the new window
+            var profile = new ProfileWindow(GetUsername); // Create new window
+            profile.Show(); // Show the new window
             Close(); // Close the current window
         }
 
