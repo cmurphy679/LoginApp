@@ -20,18 +20,18 @@
         <Border BorderBrush="Black" BorderThickness="2" Grid.ColumnSpan="2" Grid.Column="0" HorizontalAlignment="Left" Height="244" Margin="296,10,0,0" VerticalAlignment="Top" Width="281"/>
         <Image Grid.Column="0" x:Name="imgLogin" Height="310" VerticalAlignment="Top" Stretch="Fill" Source="Images/Raccoon_Login.png" Margin="0,0,95,0"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="96,72,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center" Focusable="False" Grid.Column="1" ToolTip=""/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="96,122,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center" Grid.Column="1" ToolTip="Enter current password.."/>
-        <TextBox x:Name="txtNewPassword" HorizontalAlignment="Left" Height="23" Margin="96,172,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center" Grid.Column="1" ToolTip="Enter new password.."/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="23" Margin="96,122,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center" Grid.Column="1" ToolTip="Enter current password.."/>
+        <PasswordBox x:Name="txtNewPassword" HorizontalAlignment="Left" Height="23" Margin="96,172,0,0" VerticalAlignment="Top" Width="120" FontFamily="Lucida Console" FontSize="14" VerticalContentAlignment="Center" Grid.Column="1" ToolTip="Enter new password.."/>
         <Label x:Name="lblID" Content="Username:" HorizontalAlignment="Left" Margin="344,72,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.ColumnSpan="2"
     		Grid.Column="0" />
         <Label x:Name="lblPassword" Content="Password:" HorizontalAlignment="Left" Margin="344,122,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.ColumnSpan="2"
     		Grid.Column="0" />
         <Label x:Name="lblNewPassword" Content="New Password:" HorizontalAlignment="Left" Margin="306,172,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" ToolTip="" Grid.ColumnSpan="2"
     		Grid.Column="0" />
-        <Button x:Name="btnChangePassword" Content="Update" HorizontalAlignment="Left" Margin="25,218,0,0" VerticalAlignment="Top" Width="145" FontFamily="Lucida Console" FontSize="16" Grid.Column="1" ToolTip="Update password.."/>
+        <Button x:Name="btnChangePassword" Content="Update" HorizontalAlignment="Left" Margin="25,218,0,0" VerticalAlignment="Top" Width="145" FontFamily="Lucida Console" FontSize="16" Grid.Column="1" ToolTip="Update password.." Click="btnChangePassword_Click" MouseEnter="btnChangePassword_MouseEnter" MouseLeave="btnChangePassword_MouseLeave"/>
         <Label x:Name="lblChangePassword" Content="Change Password" HorizontalAlignment="Left" Margin="340,21,0,0" VerticalAlignment="Top" FontFamily="Copperplate Gothic Bold" FontSize="16" Background="#FFC3D4E2" Width="212" HorizontalContentAlignment="Center" Grid.ColumnSpan="2"
                Grid.Column="0" />
-        <Button Grid.Column="1" x:Name="btnDeleteAccount" Content="Delete Account" HorizontalAlignment="Left" Margin="5,273,0,0" VerticalAlignment="Top" Width="183" FontFamily="Lucida Console" FontSize="16" Height="28" ToolTip="Permanantly delete account.."/>
-        <Button Grid.Column="0" x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="181,21,0,0" VerticalAlignment="Top" Width="74" FontFamily="Lucida Console" FontSize="16" Height="28" ToolTip="Return to profile screen.."/>
+        <Button Grid.Column="1" x:Name="btnDeleteAccount" Content="Delete Account" HorizontalAlignment="Left" Margin="5,273,0,0" VerticalAlignment="Top" Width="183" FontFamily="Lucida Console" FontSize="16" Height="28" ToolTip="Permanantly delete account.." Click="btnDeleteAccount_Click" MouseEnter="btnDeleteAccount_MouseEnter" MouseLeave="btnDeleteAccount_MouseLeave"/>
+        <Button Grid.Column="0" x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="181,21,0,0" VerticalAlignment="Top" Width="74" FontFamily="Lucida Console" FontSize="16" Height="28" ToolTip="Return to profile screen.." Click="btnBack_Click" MouseEnter="btnBack_MouseEnter" MouseLeave="btnBack_MouseLeave"/>
     </Grid>
 </Window>

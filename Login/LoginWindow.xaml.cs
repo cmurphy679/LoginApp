@@ -52,7 +52,7 @@ namespace Login
                 switch (count)
                 {
                     case 1:
-                        sqliteCon.Close(); // close SQLite connection
+                        sqliteCon.Close(); // Close SQLite connection
                         var main = new MainWindow(GetUsername); // Create new window
                         main.Show(); // Show the new window
                         Close(); // Close the current window

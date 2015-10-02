@@ -49,7 +49,7 @@ namespace Login
                         }
                     }
                     MessageBox.Show("Updated details!");
-                    sqliteCon.Close();
+                    sqliteCon.Close(); // Close SQLite connection
                 }
                 else
                 {
