@@ -32,5 +32,6 @@
         <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="41,268,0,0" VerticalAlignment="Top" Width="145" FontFamily="Lucida Console" FontSize="16" Click="btnUpdate_Click" MouseEnter="btnUpdate_MouseEnter" MouseLeave="btnUpdate_MouseLeave" Grid.Column="1" ToolTip="Update user details.."/>
         <Label x:Name="lblWelcome" Content="Edit Profile" HorizontalAlignment="Left" Margin="5,21,0,0" VerticalAlignment="Top" FontFamily="Copperplate Gothic Bold" FontSize="16" Background="#FFC3D4E2" Grid.Column="1" Width="212" HorizontalContentAlignment="Center"/>
         <Button Grid.Column="0" x:Name="btnSettings" Content="Advanced Settings" HorizontalAlignment="Left" Margin="119,21,0,0" VerticalAlignment="Top" Width="183" FontFamily="Lucida Console" FontSize="16" Height="28" ToolTip="Change password or delete account.." MouseEnter="btnSettings_MouseEnter" MouseLeave="btnSettings_MouseLeave" Click="btnSettings_Click"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="161,57,0,0" VerticalAlignment="Top" Width="107" FontFamily="Lucida Console" FontSize="16" Click="btnLogout_Click" MouseEnter="btnLogout_MouseEnter" MouseLeave="btnLogout_MouseLeave" ToolTip="Logout.."/>
     </Grid>
 </Window>

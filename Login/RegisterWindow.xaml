@@ -27,10 +27,10 @@
         <Label x:Name="lblPassword" Content="Password:" HorizontalAlignment="Left" Margin="344,105,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.ColumnSpan="2" Grid.Column="0" />
         <Label x:Name="lblID" Content="Username:" HorizontalAlignment="Left" Margin="344,66,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.ColumnSpan="2"
                Grid.Column="0" />
-        <Label x:Name="lblForename" Content="Forename:" HorizontalAlignment="Left" Margin="344,144,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.ColumnSpan="2"
+        <Label x:Name="lblForename" Content="Forename:" HorizontalAlignment="Left" Margin="343,144,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.ColumnSpan="2"
                Grid.Column="0" />
-        <Label x:Name="lblSurname" Content="Surname:" HorizontalAlignment="Left" Margin="3,183,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.Column="1" ToolTip=""/>
-        <Label x:Name="lblAge" Content="Age:" HorizontalAlignment="Left" Margin="41,221,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.Column="1" ToolTip=""/>
+        <Label x:Name="lblSurname" Content="Surname:" HorizontalAlignment="Left" Margin="7,183,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.Column="1" ToolTip=""/>
+        <Label x:Name="lblAge" Content="Age:" HorizontalAlignment="Left" Margin="46,221,0,0" VerticalAlignment="Top" FontFamily="Lucida Console" FontSize="16" Grid.Column="1" ToolTip=""/>
         <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="63,268,0,0" VerticalAlignment="Top" Width="108" FontFamily="Lucida Console" FontSize="16" Grid.Column="1" ToolTip="Create account.." Click="btnRegister_Click" MouseEnter="btnRegister_MouseEnter" MouseLeave="btnRegister_MouseLeave"/>
         <Label x:Name="lblWelcome" Content="Create New User" HorizontalAlignment="Left" Margin="5,21,0,0" VerticalAlignment="Top" FontFamily="Copperplate Gothic Bold" FontSize="16" Background="#FFC3D4E2" Grid.Column="1" Width="212" HorizontalContentAlignment="Center"/>
         <Button Grid.Column="0" x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="181,21,0,0" VerticalAlignment="Top" Width="74" FontFamily="Lucida Console" FontSize="16" Height="28" ToolTip="Return to login screen.." Click="btnBack_Click" MouseEnter="btnBack_MouseEnter" MouseLeave="btnBack_MouseLeave"/>

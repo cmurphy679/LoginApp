@@ -70,6 +70,14 @@ namespace Login
             Close(); // Close the current window
         }
 
+        // Logout button (Click)
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            var login = new LoginWindow(); // Create new window
+            login.Show(); // Show the new window
+            Close(); // Close the current window
+        }
+
         // Update Button (MouseEnter)
         private void btnUpdate_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -87,6 +95,16 @@ namespace Login
         }
         // Advanced Settings Button (MouseExit)
         private void btnSettings_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login.png", UriKind.RelativeOrAbsolute));
+        }
+        // Logout Button (MouseEnter)
+        private void btnLogout_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login2.png", UriKind.RelativeOrAbsolute));
+        }
+        // Logout Button (MouseExit)
+        private void btnLogout_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login.png", UriKind.RelativeOrAbsolute));
         }

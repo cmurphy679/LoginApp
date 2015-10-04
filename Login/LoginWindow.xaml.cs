@@ -1,6 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
-using System;
+using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace Login
@@ -9,6 +11,8 @@ namespace Login
     {
         // Initialise DB source location(Debug) and version
         private const string DbConnectionString = @"Data Source=database.db;Version=3;";
+        // Holds attempted login attempts for each user (max of 3)
+        readonly Dictionary<string, int> _userTable = new Dictionary<string, int>();
 
         public LoginWindow()
         {
@@ -25,6 +29,22 @@ namespace Login
             {
                 MessageBox.Show("Please enter a username and password before continuing!");
                 return;
+            }
+
+            // Check login attempt count for this username
+            int userCount;
+            if (_userTable.TryGetValue(txtUsername.Text, out userCount))
+            {
+                if (userCount >= 3) // If over 3, print alert and return
+                {
+                    MessageBox.Show("You have attempted to login as " + txtUsername.Text + " too many times(3)! Account locked!");
+                    return;
+                }
+                _userTable[txtUsername.Text] = userCount + 1; // Else, increase count for this user
+            }
+            else // If this is first login attempt, add user to database
+            {
+                _userTable.Add(txtUsername.Text, 1);
             }
 
             try
@@ -77,22 +97,22 @@ namespace Login
         }
 
         // Login Button (MouseEnter)
-        private void btnLogin_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        private void btnLogin_MouseEnter(object sender, MouseEventArgs e)
         {
             imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login2.png", UriKind.RelativeOrAbsolute));
         }
         // Login Button (MouseExit)
-        private void btnLogin_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        private void btnLogin_MouseLeave(object sender, MouseEventArgs e)
         {
             imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login.png", UriKind.RelativeOrAbsolute));
         }
         // Register Button (MouseExit)
-        private void btnRegister_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        private void btnRegister_MouseEnter(object sender, MouseEventArgs e)
         {
             imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login2.png", UriKind.RelativeOrAbsolute));
         }
         // Register Button (MouseExit)
-        private void btnRegister_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        private void btnRegister_MouseLeave(object sender, MouseEventArgs e)
         {
             imgLogin.Source = new BitmapImage(new Uri(@"Images\Raccoon_Login.png", UriKind.RelativeOrAbsolute));
         }
